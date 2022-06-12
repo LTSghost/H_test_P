@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File</title>
+</head>
+<body>
+
+
+    <!-- <form action="/file" method="post">
+        <input type="text">
+        <button type="submit">Create File</button>
+    </form> -->
+    
+    {% if arg_list != 0 %}
+        <h2>Query</h2>
+        {% for i in arg_list %}
+            {{ i[0] }} : {{ i[1] }} <br>
+        {% endfor %}
+
+    {% endif %}
+    
+    <br>
+ 
+    {% if file_info != 0 %}
+        
+        <h2>Size: {{ file_info[0] }}</h2>
+        <h2>Name: {{ file_info[1] }}</h2>
+        <h2>Modified: {{ file_info[2] }}</h2>
+
+    {% endif %}
+    <br>
+    
+    {{ f }}
+
+    <br>
+    <br>
+
+    <form action="?" method="GET">
+        <input type="text" name="orderBy" value="" />
+        <br>
+        <input type="text" name="orderByDirection" value="" /> 
+        <br>
+        <input type="text" name="filterByName" value="" /> 
+        <input type="submit" /> 
+    </form>
+
+    <br>
+
+    <form action="">
+        <input type="file">
+        <input type="submit">
+    </form>
+    
+</body>
+</html>
